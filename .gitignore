@@ -1,0 +1,47 @@
+## macOS
+.DS_Store
+
+## Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Byte-compiled / optimized / DLL files
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+coverage.xml
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+
+# Node
+node_modules/
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+*.log
+
+# Docker
+docker-compose.override.yml
+
+# Others
+*.log
