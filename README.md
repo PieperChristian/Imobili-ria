@@ -41,7 +41,7 @@ make up
 docker-compose up -d --build
 ```
 
-2. Acessar:
+### Acessar
 
 - Frontend (UI): [http://localhost:8080](http://localhost:8080)
 - Fake API (json-server): [http://localhost:3030](http://localhost:3030) (endpoints: `/imoveis`, `/vendas`)
@@ -99,4 +99,3 @@ docker-compose build front && docker-compose up -d front
 ## Licença
 
 - (Escolha a licença desejada, por exemplo MIT) — adicione um arquivo `LICENSE` com a licença escolhida.
-
