@@ -1,0 +1,45 @@
+{
+  "imoveis": [
+    {
+      "id": "m42b",
+      "tipo": "apartamento",
+      "endereco": "Fernando Osório, 320/201",
+      "bairro": "Três Vendas",
+      "preco": 280000,
+      "detalhes": "2 dorm, sala, cozinha e estacionamento, bom estado",
+      "status": "v"
+    },
+    {
+      "id": "a5ad",
+      "tipo": "Casa",
+      "endereco": "Rua dos alfineiros, 3456",
+      "bairro": "Centro",
+      "preco": 210000,
+      "detalhes": "Casa ampla com dois andares",
+      "status": "d"
+    }
+  ],
+  "vendas": [
+    {
+      "id": "v182",
+      "imovelID": "m42b",
+      "dataVenda": "2025-10-27",
+      "valorPago": 350000,
+      "comprador": "José Ricardo Santos"
+    },
+    {
+      "id": "ec0a",
+      "imovelID": "m42b",
+      "dataVenda": "2025-10-27",
+      "valorPago": 120000,
+      "comprador": "Christian"
+    },
+    {
+      "id": "a0c5",
+      "imovelID": "a5ad",
+      "dataVenda": "2025-10-27",
+      "valorPago": 200000,
+      "comprador": "Potter"
+    }
+  ]
+}

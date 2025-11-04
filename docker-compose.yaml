@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: ./backend
+    ports:
+      - "2700:5000"
+    networks:
+      - app-network
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+
+  db:
+      image: clue/json-server
+      platform: linux/amd64
+      ports:
+        - "3030:80"
+      volumes:
+        - ./api/db.json:/data/db.json
+      networks:
+        - app-network
+
+  front:
+    build:
+      context: ./frontend
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+networks:
+  app-network:
+    driver: bridge

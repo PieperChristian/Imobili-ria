@@ -1,0 +1,179 @@
+:root {
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --accent: #2b8cff;
+    --muted: #64748b;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    margin: 0;
+    background: var(--bg);
+    color: #0f172a
+}
+
+/* Buttons */
+.primary {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background .12s ease, transform .06s ease;
+}
+.primary:hover { background: #1f6fe6; transform: translateY(-1px) }
+.primary:active { transform: translateY(0) }
+.primary:disabled { opacity: .6; cursor: not-allowed }
+
+.secondary {
+    background: #eef6ff; color: #0f172a; border: 1px solid #dbe6ff; padding: 8px 12px; border-radius: 8px; cursor: pointer
+}
+.danger { background: #fee2e2; color: #9b1c1c; border: 1px solid #fecaca }
+
+/* Small buttons inside cards */
+.card button { padding: 6px 10px; border-radius: 8px; border: 1px solid transparent; background: transparent; cursor: pointer }
+.card button[data-action="edit"] { background: #eef7ff; border-color: #dbeeff }
+.card button[data-action="delete"] { background: #fff4f4; border-color: #ffd6d6 }
+.card button[data-action="sell"] { background: #eefaf0; border-color: #d6f5d9 }
+
+/* Inputs & forms */
+.form-card input, .form-card textarea, #controls input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e6eefc;
+    transition: border-color .12s ease, box-shadow .12s ease;
+}
+.form-card textarea { min-height: 100px; resize: vertical }
+.form-card .form-row { margin-bottom: 8px }
+.form-actions { display: flex; gap: 8px; justify-content: flex-start }
+
+.form-card input:focus, .form-card textarea:focus, #controls input:focus {
+    outline: none; border-color: #8fbfff; box-shadow: 0 6px 18px rgba(43,140,255,0.08)
+}
+
+/* Card actions layout */
+.card .actions { display: flex; gap: 8px; align-items: center; justify-content: flex-start; margin-top: 10px }
+.card .actions span { margin-left: auto }
+
+/* Responsiveness adjustments */
+@media (max-width:520px){
+    #controls{flex-direction:column}
+    .form-actions{flex-direction:column}
+    .card .actions{flex-direction:column;align-items:flex-start}
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px
+}
+
+.top {
+    background: linear-gradient(90deg, var(--accent), #6fb1ff);
+    color: #fff;
+    padding: 28px 0
+}
+
+.top h1 {
+    margin: 0;
+    font-size: 28px
+}
+
+.subtitle {
+    margin: 6px 0 0;
+    color: rgba(255, 255, 255, 0.9)
+}
+
+#controls {
+    display: flex;
+    gap: 8px;
+    margin: 20px 0
+}
+
+#controls input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #dbe6ff
+}
+
+#controls button {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Toasts */
+#toast-container{
+    position: fixed;
+    right: 18px;
+    top: 18px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    z-index: 9999;
+}
+.toast{
+    min-width: 220px;
+    max-width: 360px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px 12px;
+    box-shadow: 0 8px 24px rgba(15,23,42,0.12);
+    border-left: 4px solid var(--accent);
+    color: #0f172a;
+    font-size: 14px;
+}
+.toast.success{ border-left-color: #16a34a }
+.toast.error{ border-left-color: #dc2626 }
+.toast .title{ font-weight:700; margin-bottom:4px }
+.toast button.close{ background: transparent; border: none; float:right; cursor:pointer }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px
+}
+
+.card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    border: 1px solid rgba(15, 23, 42, 0.04)
+}
+
+.card h3 {
+    margin: 0 0 8px;
+    font-size: 16px
+}
+
+.meta {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 10px
+}
+
+.price {
+    font-weight: 700;
+    color: var(--accent)
+}
+
+.footer {
+    padding: 18px 0;
+    color: var(--muted);
+    font-size: 14px
+}
+
+@media (max-width:520px) {
+    .top h1 {
+        font-size: 20px
+    }
+}

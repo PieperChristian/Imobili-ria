@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Imobiliária - Front</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="top">
+        <div class="container">
+            <h1>Imobiliária</h1>
+            <p class="subtitle">Exemplo de front integrado com fake API (json-server)</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="controls">
+                <input id="search" placeholder="Pesquisar por cidade, tipo ou título..." />
+                <button id="reload" class="secondary">Recarregar</button>
+                <button id="btn-add" class="primary">Adicionar Imóvel</button>
+            </section>
+
+            <section id="list" class="grid"></section>
+
+            <section id="form-area" class="card form-card" style="display:none; margin-top:16px;">
+                <h3 id="form-title">Adicionar Imóvel</h3>
+                <form id="imovel-form">
+                    <input type="hidden" id="imovel-id" />
+                    <div class="form-row"><input id="f-tipo" placeholder="Tipo (ex: apartamento)" required></div>
+                    <div class="form-row"><input id="f-endereco" placeholder="Endereço" required></div>
+                    <div class="form-row"><input id="f-bairro" placeholder="Bairro" required></div>
+                    <div class="form-row"><input id="f-preco" placeholder="Preço" type="number" required></div>
+                    <div class="form-row"><textarea id="f-detalhes" placeholder="Detalhes"></textarea></div>
+                    <div class="form-actions">
+                        <button type="submit" id="form-save" class="primary">Salvar</button>
+                        <button type="button" id="form-cancel">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="sale-area" class="card form-card" style="display:none; margin-top:16px;">
+                <h3 id="sale-title">Registrar Venda</h3>
+                <form id="sale-form">
+                    <input type="hidden" id="sale-imovel-id" />
+                    <div class="form-row"><input id="s-data" placeholder="Data (YYYY-MM-DD)" required></div>
+                    <div class="form-row"><input id="s-valor" placeholder="Valor pago" type="number" required></div>
+                    <div class="form-row"><input id="s-comprador" placeholder="Nome do comprador" required></div>
+                    <div class="form-actions">
+                        <button type="submit" id="sale-save" class="primary">Registrar Venda</button>
+                        <button type="button" id="sale-cancel">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">API fake: <code>http://localhost:3030</code> • Front: <code>http://localhost:8080</code>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+</body>
+
+</html>
